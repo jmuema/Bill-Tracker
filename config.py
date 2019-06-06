@@ -1,20 +1,21 @@
 import os
 
 class Config:
-  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://joseph:25MuemA25@localhost/track'
+  QUOTES_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
+  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://joseph:25MuemA25@localhost/bills'
   SQLALCHEMY_TRACK_MODIFICATIONS = False
-  SECRET_KEY = os.environ.get('SECRET_KEY')
+  SECRET_KEY = 'joseph'
   UPLOADED_PHOTOS_DEST ='app/static/photos'
 
   #  email configurations
-  MAIL_SERVER = 'smtp.googlemail.com'
+  MAIL_SERVER = 'smtp.gmail.com'
   MAIL_PORT = 587
   MAIL_USE_TLS = True
-  MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-  MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+  MAIL_USERNAME = "pitchymojo@gmail.com"
+  MAIL_PASSWORD = "25MuemA25"
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://joseph:25MUemA25@localhost/bills'
 
 class TestConfig(Config):
   pass
